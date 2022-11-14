@@ -6,7 +6,7 @@ export default function GetMovieDB() {
     const key = process.env.REACT_APP_TMDB_API;
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/550?api_key=${key}`)
+        fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=${key}`)
             .then((response) => response.json())
             .then((data) => setResult(data));
     }, []);
@@ -14,5 +14,15 @@ export default function GetMovieDB() {
         console.log(result);
     }
 
-    return <div>getMovieDB</div>;
+    const [number,setNumber]= useState()
+function getNumber(){
+  //Nummer zwischen 10000 und 1
+  setNumber(Math.floor(Math.random() * 10000 +1))
+}
+    return (
+      <>
+      <button onClick={getNumber}>Random Movie</button>
+      </>
+    )
+
 }
