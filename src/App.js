@@ -1,6 +1,7 @@
 import "./App.css";
 import GetMovieDB from "./GetMovieDB";
 import FilmPage from "./Components/FilmPage";
+import LikedPage from "./Components/LikedPage";
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
 
@@ -20,7 +21,7 @@ function App() {
         <Routes>
           <Route index element={<GetMovieDB/>} />
           <Route path="/film" element={<FilmPage/>}/>
-          <Route path="/saved"element={""} />
+          <Route path="/saved"element={<LikedPage/>} />
         </Routes>
       </div>
         </div>

@@ -1,0 +1,11 @@
+.cardContainer{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.MovieCard{
+    background-color: rgba(255, 0, 0, 0.2);
+    display: flex;
+    gap: 4rem;
+}
