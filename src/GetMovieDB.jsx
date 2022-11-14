@@ -19,8 +19,10 @@ function getNumber(){
   //Nummer zwischen 10000 und 1
   setNumber(Math.floor(Math.random() * 10000 +1))
 }
-    return 
-    <>
-    <button onClick={getNumber}>Random Movie</button>
-    </>
+    return (
+      <>
+      <button onClick={getNumber}>Random Movie</button>
+      </>
+    )
+
 }
