@@ -32,7 +32,7 @@ export default function GetMovieDB() {
         if (data) {
             if (data.status_code && data.status_code === 34) {
                 const num = Math.floor(Math.random() * 10);
-                const filmNum = [560, 780, 9045, 8998, 4730,3924,6124,8773,25449,31975];
+                const filmNum = [560, 780, 9045, 8998, 4730, 3924, 6124, 8773, 25449, 31975];
                 setNumber(filmNum[num]);
             }
         }
