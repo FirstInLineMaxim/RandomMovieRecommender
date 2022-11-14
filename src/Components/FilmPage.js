@@ -31,7 +31,7 @@ export default function FilmPage({ data }) {
         // console.log("data", data);
         title = data.original_title;
 
-        mainImg = `${base_url}${logo_sizes[5]}${data.backdrop_path}`;
+        mainImg = (data.backdrop_path) ? `${base_url}${logo_sizes[5]}${data.backdrop_path}`: "https://betravingknows.com/wp-content/uploads/2017/06/video-movie-placeholder-image-grey.png"
         // img = `https://image.tmdb.org/t/p/w500/${data.backdrop_path}`;
         img = `${base_url}${logo_sizes[3]}${data.poster_path}`;
 
