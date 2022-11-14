@@ -70,7 +70,9 @@ export default function FilmPage({ data }) {
             setSave(parsed);
         }
 
+
         console.log("parsed:", parsed);
+
     }, []);
 
     return (
