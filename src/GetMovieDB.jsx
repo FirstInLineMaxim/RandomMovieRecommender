@@ -12,6 +12,9 @@ export default function GetMovieDB() {
     }, []);
     if (result) {
         console.log(result);
+        const adult = result.adult;
+        const img = result.backdrop_path;
+        const homepageUrl = result.homepage;
     }
 
     return <div>getMovieDB</div>;
