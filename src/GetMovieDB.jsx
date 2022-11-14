@@ -25,7 +25,7 @@ export default function GetMovieDB() {
 
     function getNumber() {
         //Nummer zwischen 10000 und 1
-        setNumber(Math.floor(Math.random() * 10000 + 1));
+        setNumber(Math.floor(Math.random() * 1000 + 1));
     }
 
     function verifystatusCode(data) {
