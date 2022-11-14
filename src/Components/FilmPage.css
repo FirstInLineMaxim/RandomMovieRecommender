@@ -31,6 +31,7 @@
     height: auto;
     background-color: var(--main-color);
     text-decoration: none;
+    color: white;
 }
 .button-Container a {
     text-decoration: none;
@@ -70,7 +71,9 @@ span {
 }
 
 .filmOverview-Container {
-    background-color: var(--background-color);
+    padding-left: 20px;
+    border-radius: 5px;
+    background-color: #f6f6f6;
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
@@ -81,4 +84,8 @@ span {
 .filmOverview-Container p {
     text-align: left;
     margin-right: 20px;
+}
+
+.filmOverview-Container img {
+    border-radius: 20px;
 }

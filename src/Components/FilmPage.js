@@ -55,12 +55,20 @@ export default function FilmPage({ data }) {
         //     setSave(save);
         // }
         localStorage.setItem("savedMovies", JSON.stringify(save));
+        if (save === null) {
+            setSave([data]);
+        }
+        if (save !== null) {
+            console.log("save2", save);
+            setSave((previous) => [data, ...previous]);
+            localStorage.setItem("savedMovies", JSON.stringify(save));
+        }
     }
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem("savedMovies"));
-        if (parsed) {
-            setSave(parsed);
-        }
+        // if (parsed) {
+        //     setSave(parsed);
+        // }
         console.log("parsed:", parsed);
     }, []);
 
@@ -103,7 +111,7 @@ export default function FilmPage({ data }) {
                             <span> {release_date}</span>
                         </div>
                         <div className="genres">
-                            <span> Genres</span>
+                            <span> </span>
                         </div>
                     </div>
                     <div className="generalInfo2-Container">
@@ -123,7 +131,7 @@ export default function FilmPage({ data }) {
                 </div>
                 <div></div>
             </article>
-            <button onClick={saveMovie}>Save</button>
+            {/* <button onClick={saveMovie}>Save</button> */}
         </div>
     );
 }
