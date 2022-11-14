@@ -69,6 +69,10 @@ export default function FilmPage({ data }) {
         if (parsed) {
             setSave(parsed);
         }
+
+
+        console.log("parsed:", parsed);
+
     }, []);
 
     return (
