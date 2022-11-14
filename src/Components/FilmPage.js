@@ -45,8 +45,14 @@ export default function FilmPage({ data }) {
     const [save, setSave] = useState([]);
 
     function saveMovie() {
-        setSave((previous) => [data, ...previous]);
-        localStorage.setItem("savedMovies", JSON.stringify(save));
+        if(save === null){
+            setSave([data])
+
+        }if(save !== null){
+            console.log("save2",save)
+            setSave((previous) => [data,...previous])
+            localStorage.setItem('savedMovies', JSON.stringify(save));
+        }
     }
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem("savedMovies"));
