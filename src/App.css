@@ -11,4 +11,6 @@ body{
 .Nav{
   display: flex;
   font-size: 4rem;
+  width: 100vw;
+  justify-content:space-between;
 }
