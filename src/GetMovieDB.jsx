@@ -11,21 +11,20 @@ export default function GetMovieDB() {
             .then((data) => setResult(data));
     }, []);
     if (result) {
-        console.log(result);
-        const adult = result.adult;
+        console.log("result", result);
         const img = result.backdrop_path;
         const homepageUrl = result.homepage;
     }
 
-    const [number,setNumber]= useState()
-function getNumber(){
-  //Nummer zwischen 10000 und 1
-  setNumber(Math.floor(Math.random() * 10000 +1))
-}
-    return (
-      <>
-      <button onClick={getNumber}>Random Movie</button>
-      </>
-    )
+    const [number, setNumber] = useState();
+    function getNumber() {
+        //Nummer zwischen 10000 und 1
+        setNumber(Math.floor(Math.random() * 10000 + 1));
+    }
 
+    return (
+        <>
+            <button onClick={getNumber}>Random Movie</button>
+        </>
+    );
 }
