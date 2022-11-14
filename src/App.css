@@ -1,16 +1,21 @@
-.App {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+:root {
+    --main-color: rgb(13, 11, 12);
+    --second-color: #00000062;
+    --background-color: rgb(245 245 242);
 }
-body{
-  background-color: darkslateblue;
+.App {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    background-color: var(--background-color);
 }
 
-.Nav{
-  display: flex;
-  font-size: 4rem;
-  width: 100vw;
-  justify-content:space-between;
+.Nav {
+    display: flex;
+    font-size: 4rem;
+    width: 100vw;
+    justify-content: space-between;
 }
