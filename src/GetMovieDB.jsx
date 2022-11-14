@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function GetMovieDB() {
     const [result, setResult] = useState();
+    const [number,setNumber]= useState()
 
     const key = process.env.REACT_APP_TMDB_API;
 
@@ -14,7 +15,6 @@ export default function GetMovieDB() {
         console.log(result);
     }
 
-    const [number,setNumber]= useState()
 function getNumber(){
   //Nummer zwischen 10000 und 1
   setNumber(Math.floor(Math.random() * 10000 +1))
