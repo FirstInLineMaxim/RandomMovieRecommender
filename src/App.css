@@ -8,3 +8,7 @@ body{
   background-color: darkslateblue;
 }
 
+.Nav{
+  display: flex;
+  font-size: 4rem;
+}
