@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 import FilmPage from "./Components/FilmPage";
 import config from "./config.json";
 
@@ -21,11 +22,14 @@ export default function GetMovieDB() {
     }
     return (
         <>
-            <div className="mainPage">
+        
+
+            
+            
+            {number ? <FilmPage data={result}></FilmPage> : <div className="mainPage">
                 <h1>Zufälligen film gefällig</h1>
                 <button onClick={getNumber}>Random Movie</button>
-            </div>
-            <FilmPage data={result}></FilmPage>
+            </div>}
         </>
     );
 }
