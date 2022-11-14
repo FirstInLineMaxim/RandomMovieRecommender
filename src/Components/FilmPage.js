@@ -24,6 +24,7 @@ export default function FilmPage({ data }) {
         overview,
         release_date,
         runtime,
+        genres,
         original_language;
 
     if (data) {
@@ -39,18 +40,27 @@ export default function FilmPage({ data }) {
         release_date = data.release_date;
         original_language = data.original_language;
         runtime = data.runtime;
+        // genres = data.genres.map((genre) => return( )genre.name);
     }
 
     //speichert das object in einem array behält die alten
     const [save, setSave] = useState([]);
-
+    console.log("save b", save);
     function saveMovie() {
-        setSave((previous) => [data, ...previous]);
+        // console.log("data von saveFunction", data);
+
+        // if (save != null) {
+        //     setSave((previous) => [data, ...previous]);
+        // } else {
+        //     setSave(save);
+        // }
         localStorage.setItem("savedMovies", JSON.stringify(save));
     }
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem("savedMovies"));
-        setSave(parsed);
+        if (parsed) {
+            setSave(parsed);
+        }
         console.log("parsed:", parsed);
     }, []);
 
