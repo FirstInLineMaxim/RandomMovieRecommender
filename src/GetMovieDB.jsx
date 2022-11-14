@@ -9,7 +9,7 @@ export default function GetMovieDB() {
         fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=${key}`)
             .then((response) => response.json())
             .then((data) => setResult(data));
-    }, []);
+    }, [number]);
     if (result) {
         console.log(result);
     }
