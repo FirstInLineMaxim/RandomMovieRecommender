@@ -14,8 +14,19 @@ body {
 }
 
 .Nav {
+    margin-top: 50px;
     display: flex;
-    font-size: 4rem;
+    font-size: 3rem;
     width: 100vw;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.Nav a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.Nav a:hover {
+    color: gray;
+    text-decoration: none;
 }

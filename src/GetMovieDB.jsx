@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import FilmPage from "./Components/FilmPage";
 import config from "./config.json";
+import Button from "@mui/material/Button";
+import "./GetMovieDB.css";
+// import "./Components/FilmPage.css";
 
 export default function GetMovieDB() {
     const [result, setResult] = useState();
@@ -37,14 +40,24 @@ export default function GetMovieDB() {
 
     return (
         <>
-        
+            {/* <button onClick={getNumber}>Random Movie</button> */}
+            <div className="Button-Container">
+                <Button
+                    className="randomButton"
+                    variant="contained"
+                    onClick={getNumber}
+                >
+                    Random Movie
+                </Button>
+            </div>
 
-            
-            
-            {number ? <FilmPage data={result}></FilmPage> : <div className="mainPage">
-                <h1>Zufälligen film gefällig</h1>
-            </div>}
-                <button onClick={getNumber}>Random Movie</button>
+            {number ? (
+                <FilmPage data={result}></FilmPage>
+            ) : (
+                <div className="mainPage">
+                    <h1>Zufälligen film gefällig</h1>
+                </div>
+            )}
         </>
     );
 }

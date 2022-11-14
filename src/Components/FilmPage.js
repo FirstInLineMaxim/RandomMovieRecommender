@@ -24,6 +24,7 @@ export default function FilmPage({ data }) {
         overview,
         release_date,
         runtime,
+        genres,
         original_language;
 
     if (data) {
@@ -39,24 +40,35 @@ export default function FilmPage({ data }) {
         release_date = data.release_date;
         original_language = data.original_language;
         runtime = data.runtime;
+        // genres = data.genres.map((genre) => return( )genre.name);
     }
 
     //speichert das object in einem array behält die alten
     const [save, setSave] = useState([]);
-
+    console.log("save b", save);
     function saveMovie() {
-        if(save === null){
-            setSave([data])
+        // console.log("data von saveFunction", data);
 
-        }if(save !== null){
-            console.log("save2",save)
-            setSave((previous) => [data,...previous])
-            localStorage.setItem('savedMovies', JSON.stringify(save));
+        // if (save != null) {
+        //     setSave((previous) => [data, ...previous]);
+        // } else {
+        //     setSave(save);
+        // }
+        localStorage.setItem("savedMovies", JSON.stringify(save));
+        if (save === null) {
+            setSave([data]);
+        }
+        if (save !== null) {
+            console.log("save2", save);
+            setSave((previous) => [data, ...previous]);
+            localStorage.setItem("savedMovies", JSON.stringify(save));
         }
     }
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem("savedMovies"));
-        setSave(parsed);
+        // if (parsed) {
+        //     setSave(parsed);
+        // }
         console.log("parsed:", parsed);
     }, []);
 
@@ -99,7 +111,7 @@ export default function FilmPage({ data }) {
                             <span> {release_date}</span>
                         </div>
                         <div className="genres">
-                            <span> Genres</span>
+                            <span> </span>
                         </div>
                     </div>
                     <div className="generalInfo2-Container">
@@ -119,7 +131,7 @@ export default function FilmPage({ data }) {
                 </div>
                 <div></div>
             </article>
-            <button onClick={saveMovie}>Save</button>
+            {/* <button onClick={saveMovie}>Save</button> */}
         </div>
     );
 }
