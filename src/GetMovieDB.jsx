@@ -43,8 +43,8 @@ export default function GetMovieDB() {
             
             {number ? <FilmPage data={result}></FilmPage> : <div className="mainPage">
                 <h1>Zufälligen film gefällig</h1>
-                <button onClick={getNumber}>Random Movie</button>
             </div>}
+                <button onClick={getNumber}>Random Movie</button>
         </>
     );
 }

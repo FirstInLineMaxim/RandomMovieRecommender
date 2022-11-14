@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import config from "../config.json";
 import "./FilmPage.css";
 
@@ -10,8 +10,9 @@ import LanguageIcon from "@mui/icons-material/Language";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Stack from "@mui/material/Stack";
+import LikedPage from "./LikedPage";
 
-export default function filmPage({ data }) {
+export default function FilmPage({ data }) {
     const { images } = config;
     const { base_url } = images;
     const { logo_sizes } = images;
@@ -26,7 +27,7 @@ export default function filmPage({ data }) {
         original_language;
 
     if (data) {
-        console.log("data", data);
+        // console.log("data", data);
         title = data.original_title;
 
         mainImg = `${base_url}${logo_sizes[5]}${data.backdrop_path}`;
@@ -39,6 +40,20 @@ export default function filmPage({ data }) {
         original_language = data.original_language;
         runtime = data.runtime;
     }
+
+    //speichert das object in einem array behält die alten
+    const [save, setSave] = useState([]);
+
+    function saveMovie() {
+        setSave((previous) => [data, ...previous]);
+        localStorage.setItem("savedMovies", JSON.stringify(save));
+    }
+    useEffect(() => {
+        const parsed = JSON.parse(localStorage.getItem("savedMovies"));
+        setSave(parsed);
+        console.log("parsed:", parsed);
+    }, []);
+
     return (
         <div className="filmPage-Container">
             <div className="mainImage-Container">
@@ -50,6 +65,7 @@ export default function filmPage({ data }) {
                     <div className="button-Container">
                         <Stack direction="row" spacing={2}>
                             <Button
+                                onClick={saveMovie}
                                 variant="contained"
                                 startIcon={<BookmarkBorderIcon />}
                             >
@@ -97,6 +113,7 @@ export default function filmPage({ data }) {
                 </div>
                 <div></div>
             </article>
+            <button onClick={saveMovie}>Save</button>
         </div>
     );
 }
