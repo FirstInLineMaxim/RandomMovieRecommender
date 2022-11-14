@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import FilmPage from "./Components/FilmPage";
+import config from "./config.json";
 
 export default function GetMovieDB() {
     const [result, setResult] = useState();
-    const [number, setNumber] = useState();
-
     const key = process.env.REACT_APP_TMDB_API;
+    const [number, setNumber] = useState();
+    const { images } = config;
+    const { base_url } = images;
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=${key}`)
@@ -19,7 +21,10 @@ export default function GetMovieDB() {
     }
     return (
         <>
-            <button onClick={getNumber}>Random Movie</button>
+            <div className="mainPage">
+                <h1>Zufälligen film gefällig</h1>
+                <button onClick={getNumber}>Random Movie</button>
+            </div>
             <FilmPage data={result}></FilmPage>
         </>
     );
