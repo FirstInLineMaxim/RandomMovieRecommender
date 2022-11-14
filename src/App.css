@@ -10,5 +10,7 @@ body{
 
 .Nav{
   display: flex;
+  width: 100vw;
   font-size: 4rem;
+  justify-content:space-between;
 }
