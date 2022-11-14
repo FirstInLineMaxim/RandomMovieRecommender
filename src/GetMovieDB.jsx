@@ -12,13 +12,28 @@ export default function GetMovieDB() {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=${key}`)
             .then((response) => response.json())
-            .then((data) => setResult(data));
+            .then((data) => {
+                verifystatusCode(data);
+                setResult(data);
+            });
+        verifystatusCode(result);
     }, [number]);
 
     function getNumber() {
         //Nummer zwischen 10000 und 1
         setNumber(Math.floor(Math.random() * 10000 + 1));
     }
+
+    function verifystatusCode(data) {
+        if (data) {
+            if (data.status_code && data.status_code === 34) {
+                const num = Math.floor(Math.random() * 5);
+                const filmNum = [560, 780, 9045, 8998, 4730];
+                setNumber(filmNum[num]);
+            }
+        }
+    }
+
     return (
         <>
             <div className="mainPage">
