@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import config from "../config.json";
 
-export default function filmPage({ data }) {
+export default function FilmPage({ data }) {
     const { images } = config;
     const { base_url } = images;
     const { logo_sizes } = images;
@@ -20,6 +20,12 @@ export default function filmPage({ data }) {
         release_date = data.release_date;
         console.log("homepageUrl", homepageUrl);
     }
+
+    //speichert das object in einem array behält die alten
+    const [save,setSave] = useState([])
+    function saveMovie(){
+        setSave((previous) => [data,...previous])
+}
     return (
         <div>
             <p>filmPage </p>
@@ -28,6 +34,7 @@ export default function filmPage({ data }) {
             <img src={img} alt={title} />
             <a href={homepageUrl}> Hier Klicken</a>
             <p>{overview}</p>
+            <button onClick={saveMovie}>Save</button>
         </div>
     );
 }
