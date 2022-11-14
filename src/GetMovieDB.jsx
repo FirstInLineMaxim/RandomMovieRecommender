@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 export default function GetMovieDB() {
+    const key = process.env.REACT_APP_TMDB_API;
     const [result, setResult] = useState();
     const [number,setNumber]= useState()
-
-    const key = process.env.REACT_APP_TMDB_API;
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/${number}?api_key=${key}`)
@@ -21,7 +20,10 @@ function getNumber(){
 }
     return (
       <>
+      <div className="mainPage">
+      <h1>Zufälligen film gefällig</h1>
       <button onClick={getNumber}>Random Movie</button>
+      </div>
       </>
     )
 
