@@ -1,6 +1,10 @@
 import React from "react";
+import config from "../config.json";
 
 export default function filmPage({ data }) {
+    const { images } = config;
+    const { base_url } = images;
+    console.log(base_url);
     let title, img, homepageUrl, overview, release_date;
     if (data) {
         console.log("result", data);
