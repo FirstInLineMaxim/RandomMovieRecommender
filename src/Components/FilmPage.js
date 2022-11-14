@@ -66,10 +66,9 @@ export default function FilmPage({ data }) {
     }
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem("savedMovies"));
-        // if (parsed) {
-        //     setSave(parsed);
-        // }
-        console.log("parsed:", parsed);
+        if (parsed) {
+            setSave(parsed);
+        }
     }, []);
 
     return (
