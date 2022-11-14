@@ -18,9 +18,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
+          <Route index element={<GetMovieDB/>} />
           <Route path="/film" element={<FilmPage/>}/>
           <Route path="/saved"element={""} />
-          <Route path="/" element={<GetMovieDB/>} />
         </Routes>
       </div>
         </div>

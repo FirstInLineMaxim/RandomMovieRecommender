@@ -22,14 +22,14 @@ export default function GetMovieDB() {
     }
     return (
         <>
-            <div className="mainPage">
-                <h1>Zufälligen film gefällig</h1>
-                <Link to="film">
-                <button onClick={getNumber}>Random Movie</button>
-                </Link>
+        
 
-            </div>
-            <FilmPage data={result}></FilmPage>
+            
+            
+            {number ? <FilmPage data={result}></FilmPage> : <div className="mainPage">
+                <h1>Zufälligen film gefällig</h1>
+                <button onClick={getNumber}>Random Movie</button>
+            </div>}
         </>
     );
 }
