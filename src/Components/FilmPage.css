@@ -1,0 +1,84 @@
+.filmPage-Container {
+    background-color: var(--background-color);
+    width: 95%;
+    margin: auto;
+}
+
+.mainImage-Container {
+    width: 100%;
+    margin: auto;
+}
+
+.mainImage-Container img {
+    width: 70%;
+}
+
+.film-content {
+    width: 70%;
+    margin: auto;
+    background-color: white;
+}
+
+.filmName-Container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.button-Container {
+    align-self: center;
+}
+.button-Container Button {
+    width: auto;
+    height: auto;
+    background-color: var(--main-color);
+    text-decoration: none;
+}
+.button-Container a {
+    text-decoration: none;
+}
+
+.button-Container a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.info-Container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    /* background-color: var(--background-color); */
+}
+
+.generalInfo1-Container,
+.generalInfo2-Container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(253, 255, 255);
+    width: 46%;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+.release_date,
+.genres,
+.language,
+.runtime {
+    display: flex;
+}
+
+span {
+    padding-left: 10px;
+}
+
+.filmOverview-Container {
+    background-color: var(--background-color);
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: auto;
+}
+
+.filmOverview-Container p {
+    text-align: left;
+    margin-right: 20px;
+}
