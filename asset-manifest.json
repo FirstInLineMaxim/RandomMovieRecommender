@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RandomMovieRecommender/static/css/main.6a535712.css",
+    "main.js": "/RandomMovieRecommender/static/js/main.a2eab298.js",
+    "index.html": "/RandomMovieRecommender/index.html",
+    "main.6a535712.css.map": "/RandomMovieRecommender/static/css/main.6a535712.css.map",
+    "main.a2eab298.js.map": "/RandomMovieRecommender/static/js/main.a2eab298.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a535712.css",
+    "static/js/main.a2eab298.js"
+  ]
+}
